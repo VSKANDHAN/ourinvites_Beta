@@ -1,0 +1,534 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #fff; /* Background color for preloader */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+
+}
+#preloader img{
+    width: 20%;
+    /* margin-left: 80px; */
+   
+}
+ 
+
+@font-face {
+    font-family: 'wellrockslabboldregular';
+    src: url('wellrockslabbold-webfont.woff2') format('woff2'),
+         url('wellrockslabbold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'bellezaregular';
+    src: url('belleza-regular-webfont.woff2') format('woff2'),
+         url('belleza-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Customize the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background-color: #426e81;
+}
+body{
+    background-image: url(./assets/homebg.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 120vh;
+    background-attachment:fixed ;
+}
+@media (min-width:992px) {
+    body{
+        background-image: url(./assets/homebg.jpg);
+        background-size:100% ;
+     
+
+    }
+    .navbar {
+        /* position: fixed; */
+        top: 0;
+        left: 50%; /* Center the navbar horizontally */
+        transform: translateX(-50%);
+        width: 50%;
+        margin: 0;
+}
+.navbar a{
+    color: #426e81;
+    font-weight: 600;
+    margin: 0px 6px;
+
+}
+.navbar a:hover{
+    color:#3f5f6c;
+}
+.ahov{
+    position: relative;
+    font-size: 18px;
+
+
+
+}
+.ahov::after{
+    content: "";
+    position: absolute;
+    background-color: #d0976c;
+    height:4px;
+    width: 0px;
+left: 0;
+bottom: -2px;
+transition: 0.3s;
+}
+.custom-active::after{
+    content: "";
+    position: absolute;
+    background-color: #d0976c;
+    height:4px;
+    width: 100%;
+left: 0;
+bottom: -2px;
+
+}
+
+
+.ahov:hover::after{
+width: 100%;
+
+}
+.navbar-brand{
+    font-family: 'Great Vibes', cursive;
+    font-size: 42px;
+}
+.navbar-collapse{
+    justify-content: center;
+}
+    
+}
+
+
+
+
+.intro{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    margin-top:10vh;
+
+    height: 70vh;
+    justify-content: space-evenly;
+}
+.intro-content{
+    width: 40%;
+    text-align: center;
+    padding-top: 50px;
+    
+
+}
+.intro h1{
+    font-family: 'bellezaregular';
+    
+    font-size: 60px;
+    font-weight: 500;
+    color:#426e81;
+    margin-bottom: 14px;
+
+}
+.intro h2{
+    font-family: 'wellrockslabboldregular';
+    background-color: #d0976c;
+    border-radius: 50%;
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+    align-self: center;
+    color: white;
+    margin: auto;
+    margin-bottom: 14px;
+    font-weight:100;
+}
+.intro h5{
+    color: #4c5e67;
+    letter-spacing: 8px;
+}
+/* .intro-img{
+    width: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./SK_assets/SK\ intro\ pic.png);
+    background-size: 350px;
+    background-repeat: no-repeat;
+    background-position: center;
+} */
+/* .intro-img img{
+width: 94%;
+
+} */
+.intro-content button{
+    background-color: #d0976c;
+    border: none;
+border-bottom-left-radius: 12px;
+border-top-right-radius: 12px;
+
+
+
+    padding: 4px 14px;
+    
+}
+.intro-content button>a{
+text-decoration: none;
+color: white;
+letter-spacing: 5px;
+
+}
+.heading{
+    text-align: center;
+    margin-top: 10vh;
+}
+.events{
+    width: 70%;
+
+padding: 40px 10px;
+    margin: auto;
+    display: flex;
+    margin-top: 10vh;
+    justify-content: space-evenly;
+}
+
+.tab{
+width: 35%;
+padding: 30px;
+color: white;
+border-radius: 4px;
+
+}
+/* .tab:nth-child(1){
+    background-color: #548cafac;
+} */
+.tab{
+    background-color:#dd757e;
+}
+.event{
+    display:flex;
+    justify-content: space-between;
+}
+
+.heading{
+    font-family: 'wellrockslabboldregular';
+color:#3f5f6c;
+font-size: 54px;
+}
+
+.tab h2{
+    text-align: center;
+    font-family: 'wellrockslabboldregular';
+font-size: 38px;
+}
+.tab hr{
+ color: white;
+}
+.tab i{
+    font-size: 26px;
+}
+.tab p{
+    font-size: 18px;
+    margin-top: 6px;
+}
+
+.promo{
+    width: 70%;
+    margin: auto;
+    margin-top:40px ;
+    height:12vh;
+    background-color:#426e81;
+    color: white;
+    text-align: center;
+    border-left:20px solid #dd757e ;
+    padding-top: 22px;
+}
+.promo h5{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.promo a{
+    text-decoration: none;
+    color: #dd757e;
+    font-size: 26px;
+}
+.sponsor{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+.sponsor h5{
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-family:"bellezaregular";
+    
+    font-weight: 500;
+    color:#426e81;
+}
+.sponsor div{
+    text-align: center;
+}
+.sponsor img{
+    width:30%;
+    text-align: center;
+}
+
+
+
+
+.location{
+    width: 90%;
+margin: auto;
+margin-top: 50px;
+}
+.location iframe{
+    width: 100%;
+    height: 500px;
+}
+
+
+footer{
+    height: 8vh;
+    background-color: #d0976c;
+    margin-top: 40px;
+    text-align: center;
+    padding: 10px;
+}
+footer a{
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    font-family: 'Fredericka the Great', cursive;
+}
+
+
+@media(max-width:768px) {
+
+    body{
+        background-image: url(./assets/homebg1.jpg);
+background-attachment: fixed;
+height: 100vh;
+    }
+    #preloader {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background-color: #fff; /* Background color for preloader */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:start;
+    
+    }
+    #preloader img{
+        width: 50%;
+        margin-left: 80px;
+       
+    }
+    .navbar-brand{
+        font-family: 'Great Vibes', cursive;
+        font-size: 42px;
+        text-align: center;
+    }
+    .navbar a{
+        color: #426e81;
+        font-weight: 600;
+        margin: 0px 6px;
+    
+    }
+    .navbar-toggler{
+        border: none;
+    }
+    .intro{
+        flex-direction: column-reverse;
+        display: flex;
+        width: 90%;
+        margin: auto;
+        margin-top:4vh;
+    
+        /* height: 70vh; */
+        justify-content:center;
+        align-items: center;
+    }
+    
+
+
+    .intro-content{
+        width: 90%;
+        margin: auto;
+        padding-top: 2px;
+    
+    }
+    .intro h1{
+        font-family: 'bellezaregular';
+        
+        font-size: 38px;
+        font-weight: 500;
+        color:#426e81;
+        margin-bottom: 2px;
+    
+    }
+    .intro h2{
+        font-family: 'wellrockslabboldregular';
+        background-color: #d0976c;
+        border-radius: 50%;
+        padding: 4px;
+        font-size: 32px;
+        /* width: 50px;
+        height: 50px; */
+        align-self: center;
+        color: white;
+        margin: auto;
+        margin-bottom: 14px;
+        font-weight:300;
+    }
+    .intro h5{
+        color: #536a75;
+        letter-spacing: 8px;
+        font-size: 20px;
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+    .intro-img{
+       width: 100%;
+       display: flex;
+align-items: center;
+justify-content: center; 
+padding-top: 20px;  
+    }
+    .intro-img img{
+        width:90%;
+        display: block;
+        margin: auto;
+    
+    }
+    .intro-content button{
+        background-color: #d0976c;
+        border: none;
+    border-bottom-left-radius: 12px;
+    border-top-right-radius: 12px;
+    
+    
+    
+        padding: 4px 14px;
+        
+    }
+    .intro-content button>a{
+    text-decoration: none;
+    color: white;
+    letter-spacing: 5px;
+    
+    }
+    #events{
+        margin-top: 20vh;
+    }
+    .events{
+        flex-direction: column;
+        width: 90%;
+        padding-top: 10px;
+        margin-top: 2vh;
+    }
+    .tab{
+        width: 100%;
+        margin-bottom: 26px;
+    }
+    .promo{
+        width: 90%;
+        text-align: justify;
+        padding: 10px;
+        margin-top: 10px;
+    }
+    .promo h5{
+        font-size: 18px;
+        padding-top: 10px;
+    }
+    .sponsor{
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+    }
+    .sponsor h5{
+        font-size: 26px;
+        margin-bottom: 40px;
+        font-family:"bellezaregular";
+        
+        font-weight: 500;
+        color:#426e81;
+    }
+    .sponsor div{
+        text-align: center;
+    }
+    .sponsor img{
+        width:80%;
+        text-align: center;
+    }
+    
+
+    
+}
+
+
+
+
+
+body{
+    overflow-x: hidden;
+}
+
+
+
+
+
+
+
+  .animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+ 
+
+  /* .intro>.animate {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  } */
+  .active {
+    opacity: 1;
+    transform: translateX(0);
+  }
