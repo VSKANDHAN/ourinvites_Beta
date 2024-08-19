@@ -11,7 +11,7 @@ app.get('/',(req,res)=>{
 })
 app.get('/:username', (req, res) => {
     const username = req.params.username;
-    const filePath = path.join(__dirname,public,ourinvites,username, 'index.html');
+    const filePath = path.join(__dirname,username, 'index.html');
 
     fs.readFile(filePath, (err, data) => {
         if (err) {
