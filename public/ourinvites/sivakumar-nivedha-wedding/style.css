@@ -160,8 +160,8 @@ width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(./assets/herobg1.png);
-    background-size: 350px;
+    background-image: url(./assets/herobg.png);
+    background-size: 360px;
     background-repeat: no-repeat;
     background-position: center;
 }
