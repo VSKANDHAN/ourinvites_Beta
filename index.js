@@ -31,6 +31,34 @@ app.get('/:username', (req, res) => {
         }
     });
 });
+app.get('/get/adminvsk', async (req, res) => {
+    try {
+        let requests = await InviteRequest.find();
+        let div = '<div class="requests-container" style="width:90%;margin:auto;">';
+        console.log(requests);
+        
+
+        requests.forEach((element) => {
+            div += `
+                <div class="request-item" style="border:2px solid crimson;padding:10px;border-radius:8px">
+                    <h3 style="color:#ff3392">Name: ${element.name}</h3>
+                    <p>Contact: ${element.contact}</p>
+                    <p>Event Name: ${element.eventName}</p>
+                    <p>Event Date: ${element.eventDate}</p>
+                    <p>Created At: ${element.createdAt}</p>
+
+
+                </div>
+            `;
+        });
+
+        div += '</div>';
+        res.send(div);
+    } catch (err) {
+        res.status(500).send(err);
+    }
+});
+
 app.post('/inviteRequest', async (req, res) => {
     
         let inviteRequestParams = req.body;
