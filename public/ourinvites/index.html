@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OurInvites</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="logo">
+        <img src="./OurInvites_Logo_transparent_bg.png" alt="ourinvites logo">
+    
+</div>
+<div class="formHeading">
+    <h3>Get Your <span>Invitation</span> @ Just <span>Rs. 29</span></h3>
+
+</div>
+    <div class="register-form">
+
+
+        <form action="/inviteRequest" method="post">
+
+<div class="input-div">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder=" Your Sweet Name" required>
+</div>
+<div class="input-div">
+    <label for="contact">Contact</label>
+    <input type="tel" id="contact" name="contact" 
+
+    placeholder=" 6380907421" 
+    required>
+</div>
+<div class="input-div">
+    <label for="eventName">Event Name</label>
+    <input type="text" id="eventName" name="eventName" placeholder=" Wedding, Baby Shower">
+</div>
+<div class="input-div">
+    <label for="eventDate">Event Date</label>
+    <input type="date" id="eventDate" name="eventDate">
+</div>
+<div class="input-div">
+
+<button type="submit" class="submitBtn">Get Invitation <i class="fa-regular fa-paper-plane"></i></button>
+</div>
+</form>
+      
+
+    </div>
+<div class="sampleTemplates" id="sampleTemplates">
+
+<div class="templates">
+    <div class="templateCard">
+        <div class="templateImage">
+            <img src="./wedding_thumbnail.png" alt="wedding invite">
+        </div>
+
+        <div class="templateText">
+            <p>Wedding</p>
+            <button class="viewTemplate"><a href="/sathish-soundarya-wedding/" target="_blank">View</a></button>
+        </div>
+
+
+    </div>
+    <div class="templateCard">
+        <div class="templateImage">
+            <img src="./baby_shower_thumbnail.png" alt="wedding invite">
+        </div>
+
+        <div class="templateText">
+            <p>Baby Shower</p>
+            <button class="viewTemplate"><a href="/anu-karthik-baby-shower/" target="_blank">View</a></button>
+        </div>
+
+
+    </div>
+</div>
+
+</div>
+    
+</body>
+</html>
