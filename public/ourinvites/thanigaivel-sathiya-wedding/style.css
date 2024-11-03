@@ -137,6 +137,9 @@ width: 100%;
     margin-bottom: 14px;
 
 }
+.intro h1>span{
+    font-size: 28px;
+}
 .intro h2{
     font-family: 'wellrockslabboldregular';
     background-color: #d0976c;
@@ -330,12 +333,16 @@ height: 100vh;
     .intro h1{
         font-family: 'bellezaregular';
         
-        font-size: 52px;
+        font-size: 36px;
         font-weight: 500;
         color:#426e81;
         margin-bottom: 2px;
     
     }
+    .intro h1>span{
+        font-size: 26px;
+    }
+    
     .intro h2{
         font-family: 'wellrockslabboldregular';
         background-color: #d0976c;
