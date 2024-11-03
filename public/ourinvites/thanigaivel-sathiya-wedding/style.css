@@ -342,6 +342,9 @@ height: 100vh;
     .intro h1>span{
         font-size: 26px;
     }
+    .bds{
+        font-size: 28px !important;
+    }
     
     .intro h2{
         font-family: 'wellrockslabboldregular';
