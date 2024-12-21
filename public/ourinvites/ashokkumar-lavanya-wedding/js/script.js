@@ -10,6 +10,9 @@
 $(document).on('click', function(){
     document.getElementById("my_audio").play();
 });
+// $(document).on('scroll', function(){
+//     document.getElementById("my_audio").play();
+// });
 
  
 
