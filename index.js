@@ -89,7 +89,6 @@ try{
 <b>Contact:</b> ${inviteRequest.contact}
     `;
     
-   // bot.sendMessage(chatId, messageString, { parse_mode: "HTML" });
     bot.sendMessage(chatId, messageString, { parse_mode: "HTML" })
   .then(response => {
     console.log('Telegram Response:', response);
