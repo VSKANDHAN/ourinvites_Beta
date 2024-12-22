@@ -1,4 +1,6 @@
 const express=require('express')
+const TelegramBot = require('node-telegram-bot-api');
+
 const fs=require('fs')
 const path=require('path')
 require('dotenv/config')
@@ -11,7 +13,19 @@ const InviteRequest = require('./models/inviteRequest');
 const app=express()
 app.use(express.static(path.join(__dirname, 'public','ourinvites')));
 app.use(express.urlencoded({ extended: true }));
+const token = '7244253089:AAEOr1W_zDYRZi8WAr3zhRmtjlH9QF5tGP0';
+const chatId = '1436538631'; 
+const bot = new TelegramBot(token, { polling: false });
+
+
+
 connectDB()
+
+
+
+
+
+
 
 
 
@@ -64,8 +78,20 @@ app.post('/inviteRequest', async (req, res) => {
         let inviteRequestParams = req.body;
 try{
             
- 
     let inviteRequest = new InviteRequest(inviteRequestParams);
+
+    
+    let messageString = `
+    Received New Invite Request!\n
+<b>Name:</b> ${inviteRequest.name}\n
+<b>Event Name:</b> ${inviteRequest.eventName}\n
+<b>Event Date:</b> ${inviteRequest.eventDate}\n
+<b>Contact:</b> ${inviteRequest.contact}
+    `;
+    
+    bot.sendMessage(chatId, messageString, { parse_mode: "HTML" });
+    
+   
     await inviteRequest.save();
 
     res.sendFile(path.join(__dirname, 'public','ourinvites', 'inviteRequest.html'));
