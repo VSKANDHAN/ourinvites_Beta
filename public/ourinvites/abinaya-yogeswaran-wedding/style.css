@@ -210,6 +210,7 @@ width: 35%;
 padding: 30px;
 color: white;
 border-radius: 4px;
+margin: 10px;
 
 }
 .tab:nth-child(1){
@@ -218,6 +219,10 @@ border-radius: 4px;
 .tab:nth-child(2){
     background-color:#dd757e;
 }
+.tab:nth-child(3){
+    background-color: #548cafac;
+}
+
 .event{
     display:flex;
     justify-content: space-between;
