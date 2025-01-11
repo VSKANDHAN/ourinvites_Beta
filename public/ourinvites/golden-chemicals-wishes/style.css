@@ -165,6 +165,17 @@ i{
 
 
 @media (min-width:992px) {
+    #video {
+        width: 50%;
+       margin: auto;
+        border-radius: 6px;
+        border: 2px solid brown;
+    }
+    .videoDiv{
+        display: flex;
+        align-items: center;
+        margin-bottom: 6vh;
+    }
     body{
         background-image: url(./assets/longBg.png);
         background-size:cover;
