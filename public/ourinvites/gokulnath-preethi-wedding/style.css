@@ -112,19 +112,88 @@ width: 100%;
 
 
 
+.intro{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    margin-top:10vh;
 
- 
- 
- 
- 
- 
+    height: 70vh;
+    justify-content: space-evenly;
+}
+.intro-content{
+    width: 40%;
+    text-align: center;
+    padding-top: 50px;
+    
+
+}
+.intro h1{
+    font-family: 'bellezaregular';
+    
+    font-size: 60px;
+    font-weight: 500;
+    color:#426e81;
+    margin-bottom: 14px;
+
+}
+.intro h2{
+    font-family: 'wellrockslabboldregular';
+    background-color: #d0976c;
+    border-radius: 50%;
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+    align-self: center;
+    color: white;
+    margin: auto;
+    margin-bottom: 14px;
+    font-weight:100;
+}
+.intro h5{
+    color: #4c5e67;
+    letter-spacing: 8px;
+}
+.intro-img{
+    width: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./assets/herobg1.png);
+    background-size: 350px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.intro-img img{
+width: 94%;
+
+}
+.intro-content button{
+    background-color: #d0976c;
+    border: none;
+border-bottom-left-radius: 12px;
+border-top-right-radius: 12px;
+
+
+
+    padding: 4px 14px;
+    
+}
+.intro-content button>a{
+text-decoration: none;
+color: white;
+letter-spacing: 5px;
+
+}
 .heading{
     text-align: center;
     margin-top: 10vh;
 }
 .events{
     width: 70%;
-    padding: 40px 10px;
+
+padding: 40px 10px;
     margin: auto;
     display: flex;
     margin-top: 10vh;
@@ -219,18 +288,6 @@ footer a{
     font-family: 'Fredericka the Great', cursive;
 }
 
-#video{
-    width:auto  ;
-    height:100%;
-    margin: auto;
-    border-radius: 6px;
-}
-.intro{
-    
- display: flex;
- height:84vh;
-    
-}
 
 @media(max-width:768px) {
 
@@ -239,11 +296,11 @@ footer a{
         backdrop-filter: blur(3px);
 
 background-attachment: fixed;
-height: 140vh;
+height: 100vh;
     }
     .navbar-brand{
         font-family: 'Great Vibes', cursive;
-        font-size: 36px;
+        font-size: 42px;
         text-align: center;
     }
     .navbar a{
@@ -256,27 +313,29 @@ height: 140vh;
         border: none;
     }
     .intro{
-        padding-top: 2px;
-       display:flex;
-        
+        padding-top: 20px;
+
+        flex-direction: column-reverse;
         justify-content: center;
-        align-items: center;
-
-        margin-bottom:5vh;
     }
 
 
 
-  
+    .intro-content{
+        width: 90%;
+        margin: auto;
+        padding-top: 2px;
     
-   
-
-    #video{
-        width:auto;
-        height:76vh;
-        border-radius: 6px;
     }
+    .intro h1{
+        font-family: 'bellezaregular';
+        
+        font-size: 52px;
+        font-weight: 500;
+        color:#426e81;
+        margin-bottom: 2px;
     
+    }
     .intro h2{
         font-family: 'wellrockslabboldregular';
         background-color: #d0976c;
@@ -287,7 +346,6 @@ height: 140vh;
         align-self: center;
         color: white;
         margin: auto;
-        margin-top: 14px;
         margin-bottom: 14px;
         font-weight:100;
     }
@@ -351,11 +409,11 @@ height: 140vh;
         border-left: 16px solid #dd757e;
     }
     .promo h5{
-        font-size: 16px;
+        font-size: 18px;
         padding-top: 10px;
     }
     .promoBtn{
-        font-size: 16px !important;
+        font-size: 18px !important;
         padding: 2px 2px;
         display: block;
         width: 30%;
@@ -379,11 +437,11 @@ body{
 
 
 
-  /* .animate {
+  .animate {
     opacity: 0;
     transform: translateY(50px);
-    transition: opacity 0.3s ease, transform ease;
-  } */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
  
 
   /* .intro>.animate {

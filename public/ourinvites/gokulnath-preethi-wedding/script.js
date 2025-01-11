@@ -28,13 +28,6 @@ $(document).ready(function () {
   
     // Call the handleScrollAnimation function on page load
     handleScrollAnimation();
-
-    $(document).on('click', function(){
-      document.getElementById("my_audio").play();
-  });
-   
-
-
   });
   
 

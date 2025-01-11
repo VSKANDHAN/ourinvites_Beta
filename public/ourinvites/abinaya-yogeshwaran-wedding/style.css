@@ -110,7 +110,9 @@ width: 100%;
 }
 
 
-
+.music {
+	display: none;
+}
 
 .intro{
     display: flex;
