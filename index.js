@@ -7,6 +7,7 @@ require('dotenv/config')
 
 const connectDB=require('./config/db')
 const InviteRequest = require('./models/inviteRequest');
+const feedbackData=require('./models/feedbackData')
 
 
 
@@ -31,6 +32,14 @@ connectDB()
 
 app.get('/',(req,res)=>{
     res.sendFile(path.join(__dirname, 'public','ourinvites', 'index.html'));
+    
+})
+app.get('/kpm-bookfair2025',(req,res)=>{
+    res.sendFile(path.join(__dirname, 'public','ourinvites', 'feedback.html'));
+    
+})
+app.get('/freeinvite',(req,res)=>{
+    res.sendFile(path.join(__dirname, 'public','ourinvites', 'freeInvite.html'));
     
 })
 app.get('/:username', (req, res) => {
@@ -108,6 +117,136 @@ catch(err){
 }
 
 });
+
+app.post('/freeInviteRequest', async (req, res) => {
+    
+    let inviteRequestParams = req.body;
+try{
+        
+let inviteRequest = new InviteRequest(inviteRequestParams);
+
+
+let messageString = `
+Received Free Invite Request!\n
+<b>Name:</b> ${inviteRequest.name}\n
+<b>Event Name:</b> ${inviteRequest.eventName}\n
+<b>Event Date:</b> ${inviteRequest.eventDate}\n
+<b>Contact:</b> ${inviteRequest.contact}
+`;
+
+bot.sendMessage(chatId, messageString, { parse_mode: "HTML" })
+.then(response => {
+console.log('Telegram Response:', response);
+})
+.catch(err => {
+console.log('Telegram Error:', err);
+});
+
+
+
+await inviteRequest.save();
+
+res.sendFile(path.join(__dirname, 'public','ourinvites', 'inviteRequest.html'));
+}
+catch(err){
+res.status(400).send(err)
+}
+
+});
+
+app.post('/submitFeedback', async (req, res) => {
+    
+    let feedbackDataParams = req.body;
+    console.log(feedbackDataParams);
+    
+try{
+        
+let feedbackDataRes = new feedbackData(feedbackDataParams);
+
+
+let messageString = `
+Received New Feedback!\n
+<b>Name:</b> ${feedbackDataRes.name}\n
+<b>Contact:</b> ${feedbackDataRes.contact}
+`;
+
+bot.sendMessage(chatId, messageString, { parse_mode: "HTML" })
+.then(response => {
+console.log('Telegram Response:', response);
+})
+.catch(err => {
+console.log('Telegram Error:', err);
+});
+
+
+
+await feedbackDataRes.save();
+
+res.sendFile(path.join(__dirname, 'public','ourinvites', 'freeInviteRequest.html'));
+}
+catch(err){
+res.status(400).send(err)
+console.log(err);
+
+}
+
+});
+
+
+
+
+app.get('/get/admin/feedbacks', async (req, res) => {
+    try {
+        let requests = await feedbackData.find();
+        
+        // Read the HTML template file
+        fs.readFile(path.join(__dirname,'public','ourinvites', 'feedbackDashboard.html'), 'utf8', (err, htmlTemplate) => {
+            if (err) {
+                return res.status(500).send("Error reading HTML template.");
+            }
+
+            let feedbackListHTML = '';
+            let totalRating = 0;
+            // let recommendedCount = 0;
+
+            requests.forEach((element) => {
+                totalRating += parseInt(element.rating || 0);
+
+                feedbackListHTML += `
+                    <li class="feedback-item">
+                        <strong>${element.name}</strong> <br>
+                        <span class="rating">⭐ ${element.rating || 'N/A'}</span> <br>
+                        <p><strong>Contact:</strong> ${element.contact || 'N/A'}</p>
+                        <p><strong>Email:</strong> ${element.email || 'N/A'}</p>
+                        <p><strong>Feedback Loved:</strong> ${element.loved || 'N/A'}</p>
+                        <p><strong>Improvements:</strong> ${element.improvements || 'N/A'}</p>
+                        <p><strong>Comments:</strong> ${element.comments || 'N/A'}</p>
+                        <p><strong>Books Count:</strong> ${element.booksCount || 'N/A'}</p>
+                        <p><strong>Books Names:</strong> ${element.booksName || 'N/A'}</p>
+                        <p><strong>Created At:</strong> ${new Date(element.createdAt).toLocaleString()}</p>
+                        <hr>
+                    </li>
+                `;
+            });
+
+            const averageRating = (totalRating / requests.length).toFixed(1);
+
+            // Replace placeholders in the HTML template
+            const populatedHTML = htmlTemplate
+                .replace('{{feedbackList}}', feedbackListHTML)
+                .replace('{{totalFeedback}}', requests.length)
+                .replace('{{averageRating}}', averageRating)
+                // .replace('{{recommendedCount}}', recommendedCount);
+
+            // Send the populated HTML as response
+            res.send(populatedHTML);
+        });
+        
+    } catch (err) {
+        res.status(500).send(err);
+    }
+});
+
 
 
 app.listen(9000,()=>{

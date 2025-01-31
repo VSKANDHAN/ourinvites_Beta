@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedbacks Admin - District Book Fair</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; padding: 20px; background: #f4f4f4; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h2 { text-align: center; }
+        .summary { display: flex; justify-content: space-between; margin-bottom: 20px; }
+        .widget { background: #007bff; color: white; padding: 15px; border-radius: 8px; text-align: center; flex: 1; margin: 5px; }
+        .feedback-list { list-style: none; padding: 0; }
+        .feedback-item { background: #fff; padding: 10px; margin: 10px 0; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
+        .rating { color: #ff9800; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Feedbacks of Kanchipuram District Book Fair</h2>
+        <div class="summary">
+            <div class="widget" id="total-feedback">Total Feedback: {{totalFeedback}}</div>
+            <div class="widget" id="average-rating">Average Rating: {{averageRating}}</div>
+            <!-- <div class="widget" id="recommended-count">Recommended: {{recommendedCount}}</div> -->
+        </div>
+        <ul class="feedback-list" id="feedback-list">
+            {{feedbackList}}
+        </ul>
+    </div>
+</body>
+</html>

@@ -224,6 +224,7 @@ text-decoration: none;
     .templates{
         display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     }
     .templateCard{
         width: 40%;
