@@ -167,7 +167,15 @@ let feedbackDataRes = new feedbackData(feedbackDataParams);
 let messageString = `
 Received New Feedback!\n
 <b>Name:</b> ${feedbackDataRes.name}\n
-<b>Contact:</b> ${feedbackDataRes.contact}
+<b>email:</b> ${feedbackDataRes.email}\n
+<b>Contact:</b> ${feedbackDataRes.contact}\n
+<b>rating:</b> ${feedbackDataRes.rating}\n
+<b>loved:</b> ${feedbackDataRes.loved}\n
+<b>improvements:</b> ${feedbackDataRes.improvements}\n
+<b>comments:</b> ${feedbackDataRes.comments}\n
+<b>booksCount:</b> ${feedbackDataRes.booksCount}\n
+<b>booksName:</b> ${feedbackDataRes.booksName}\n
+<b>createdAt:</b> ${feedbackDataRes.createdAt}\n
 `;
 
 bot.sendMessage(chatId, messageString, { parse_mode: "HTML" })
