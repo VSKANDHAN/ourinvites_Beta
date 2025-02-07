@@ -57,6 +57,11 @@ app.get('/:username', (req, res) => {
 app.get('/get/adminvsk', async (req, res) => {
     try {
         let requests = await InviteRequest.find();
+
+          const filePath = path.join(__dirname, 'public', 'ourinvites', 'inviteReqData.json');
+
+        fs.writeFileSync(filePath, JSON.stringify(requests, null, 4), 'utf8');
+
         let div = '<div class="requests-container" style="width:90%;margin:auto;">';
         console.log(requests);
         
@@ -362,6 +367,32 @@ app.post('/submitFeedback1', async (req, res) => {
 
     try {
         let feedbackDataRes = new feedbackData(feedbackDataParams);
+
+
+let messageString = `
+Received New Feedback!\n
+<b>Name:</b> ${feedbackDataRes.name}\n
+<b>email:</b> ${feedbackDataRes.email}\n
+<b>Contact:</b> ${feedbackDataRes.contact}\n
+<b>rating:</b> ${feedbackDataRes.rating}\n
+<b>loved:</b> ${feedbackDataRes.loved}\n
+<b>improvements:</b> ${feedbackDataRes.improvements}\n
+<b>comments:</b> ${feedbackDataRes.comments}\n
+<b>booksCount:</b> ${feedbackDataRes.booksCount}\n
+<b>booksName:</b> ${feedbackDataRes.booksName}\n
+<b>createdAt:</b> ${feedbackDataRes.createdAt}\n
+`;
+
+bot.sendMessage(chatId, messageString, { parse_mode: "HTML" })
+.then(response => {
+console.log('Telegram Response:', response);
+})
+.catch(err => {
+console.log('Telegram Error:', err);
+});
+
+
+
         await feedbackDataRes.save();
         
 
@@ -403,96 +434,24 @@ app.post('/submitFeedback1', async (req, res) => {
             <head>
                 <title>🎁 Surprise Inside! | OurInvites</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1">
-
                 <style>
-                    body { 
-                        font-family: Arial, sans-serif; 
-                        text-align: center; 
-                        padding: 20px; 
-                        background-color: #fffcf2; 
-                        margin: 0;
-                    }
-                 .container {
-    width: 60%;
-
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    text-align: center;
-    margin-top:2vh;
-}
-
-                    h2 { 
-                        color: #ff5733; 
-                        font-size: 24px; 
-                    }
-                    .book-title { 
-                        font-size: 22px; 
-                        font-weight: bold; 
-                        color: #2c3e50; 
-                        margin-top: 10px; 
-                    }
-                    .book-description { 
-                        font-size: 16px; 
-                        color: #555; 
-                        margin-top: 10px; 
-                    }
-                           .bookImageDIv{
-                    width:50%;
-                    margin:auto;                                                                            
-                    }
-                    .book-image { 
-                        width: 50%; 
-                        
-                        height: auto; 
-                        margin-top: 15px; 
-                        border-radius: 10px; 
-                        box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
-                    }
-                    .cta { 
-                        margin-top: 20px; 
-                        padding: 10px 20px; 
-                        background: #28a745; 
-                        color: white; 
-                        text-decoration: none; 
-                        font-weight: bold; 
-                        border-radius: 5px; 
-                        display: inline-block; 
-                    }
-                    
-                    /* Responsive Design */
+                    body { font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #fffcf2; margin: 0; }
+                    .container { width: 60%; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center; margin-top: 2vh; }
+                    h2 { color: #ff5733; font-size: 24px; }
+                    .book-title { font-size: 22px; font-weight: bold; color: #2c3e50; margin-top: 10px; }
+                    .book-description { font-size: 16px; color: #555; margin-top: 10px; }
+                    .bookImageDIv { width: 50%; margin: auto; }
+                    .book-image { width: 50%; height: auto; margin-top: 15px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+                    .cta { margin-top: 20px; padding: 10px 20px; background: #28a745; color: white; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; }
+                    .share-btn { margin-top: 20px; padding: 10px 20px; background: #25D366; color: white; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; }
                     @media (max-width: 640px) {
-                        .container {
-
-                            width: 90%;
-                            padding: 15px;
-                        }
-                        h2 {
-                            font-size: 20px;
-                        }
-                        .book-title {
-                            font-size: 18px;
-                        }
-                    .bookImageDIv{
-                    width:80%
-                    }
-                    .book-image { 
-                        width: 90%; 
-                        
-                        height: auto; 
-                        margin-top: 15px; 
-                        border-radius: 10px; 
-                        box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
-                    }
-                        .book-description {
-                            font-size: 14px;
-                        }
-                        .cta {
-                            font-size: 14px;
-                            padding: 8px 16px;
-                        }
+                        .container { width: 90%; padding: 15px; }
+                        h2 { font-size: 20px; }
+                        .book-title { font-size: 18px; }
+                        .bookImageDIv { width: 80%; }
+                        .book-image { width: 90%; }
+                        .book-description { font-size: 14px; }
+                        .cta, .share-btn { font-size: 14px; padding: 8px 16px; }
                     }
                 </style>
             </head>
@@ -500,15 +459,21 @@ app.post('/submitFeedback1', async (req, res) => {
                 <div class="container">
                     <h2>🎁 Your Next Book is Calling! 🎉</h2>
                     <p>Hey <strong>${feedbackDataRes.name}</strong>, your book destiny has been revealed! 📖✨</p>
-                   <div class="bookImageDIv">
-                    <img class="book-image" src="${bookImage}" alt="Book Cover">
-                   </div>
+                    <div class="bookImageDIv">
+                        <img class="book-image" src="${bookImage}" alt="Book Cover">
+                    </div>
                     <p class="book-title">"${bookTitle}"</p>
                     <p class="book-description">${bookDescription}</p>
+        
+                    <!-- WhatsApp Share Button -->
+                    <a class="share-btn" href="https://api.whatsapp.com/send?text=Hey!%20I%20just%20got%20a%20book%20suggestion%20from%20OurInvites.%20Check%20this%20out!%20📚%0A%0A*Title:*%20${encodeURIComponent(bookTitle)}%0A*Description:*%20${encodeURIComponent(bookDescription)}%0A%0AGet%20your%20own%20book%20suggestion%20here:%20https://ourinvites.com/kpm-bookfair2025" target="_blank">
+                        📤 Share with Friends on WhatsApp
+                    </a>
                 </div>
             </body>
             </html>
         `);
+        
         
     } catch (err) {
         res.status(400).send(err);
