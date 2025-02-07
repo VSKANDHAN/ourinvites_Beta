@@ -362,7 +362,7 @@ app.post('/submitFeedback1', async (req, res) => {
 
     try {
         let feedbackDataRes = new feedbackData(feedbackDataParams);
-        // await feedbackDataRes.save();
+        await feedbackDataRes.save();
         
 
         // Select a random book suggestion
