@@ -21,7 +21,7 @@
 
 
 .promo{
-    width: 70%;
+    width: 60vw;
     margin: auto;
     margin-top:40px ;
     height:12vh;
@@ -102,9 +102,13 @@ footer a{
             background: linear-gradient(135deg, #FFF5E1, #FFE4E1);
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             padding: 2rem;
+        }
+        .promoDiv{
+            margin-top: 4vh;
         }
 
         .card {
@@ -268,14 +272,18 @@ footer a{
             [Your Name]
         </div>
     </div>
-    <div class="promo animate">
-        <h5>Get instant Web Invites with <a href="/">OurInvites</a> just one click! <a href="/" class="promoBtn" style="background-color:#dd757e; color: white; padding: 4px 6px; border-radius: 6px; font-size: 22px;">Get Now</a></h5>
-      </div>
+   
 
-    <footer>
-
-        <a href="tel:+916380907421"> Crafted by OurInvites</a>
-      </footer>
+    <div class="promoDiv">
+        <div class="promo animate">
+            <h5>Get instant Web Invites with <a href="/">OurInvites</a> just one click! <a href="/" class="promoBtn" style="background-color:#dd757e; color: white; padding: 4px 6px; border-radius: 6px; font-size: 22px;">Get Now</a></h5>
+          </div>
+    
+        <footer>
+    
+            <a href="tel:+916380907421"> Crafted by OurInvites</a>
+          </footer>
+    </div>
 
     <script>
         function createFloatingHearts() {
