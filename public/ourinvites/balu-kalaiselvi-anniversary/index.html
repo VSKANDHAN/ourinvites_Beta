@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balu & Kalaiselvi - 20th Anniversary</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+   
+    <meta name="author" content="ourInvites">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content=">Balu & Kalaiselvi - 20th Anniversary" />
+    <meta property="og:description"
+       content="Celebrating 20 Years of Love" />
+<meta property="og:image" content="https://www.ourinvites.com/balu-kalaiselvi-anniversary/anniversary.jpg" />
+<meta property="og:url" content="https://www.ourinvites.com/balu-kalaiselvi-anniversary/" />
+<meta property="og:type" content="website" />
+   
+   
+   
+   <style>
+
+
+.promo{
+    width: 70%;
+    margin: auto;
+    margin-top:40px ;
+    height:12vh;
+    background-color:#426e81;
+    color: white;
+    text-align: center;
+    border-left:20px solid #dd757e ;
+    padding-top: 22px;
+}
+.promo h5{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.promo a{
+    text-decoration: none;
+    color: #dd757e;
+    font-size: 26px;
+}
+
+
+@media(max-width:768px) {
+ 
+.promo{
+    width: 90%;
+    text-align: start;
+    padding: 10px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    height: auto;
+    border-left: 16px solid #dd757e;
+}
+.promo h5{
+    font-size: 18px;
+    padding-top: 10px;
+}
+.promoBtn{
+    font-size: 18px !important;
+    padding: 2px 2px;
+    display: block;
+    width: 30%;
+    
+
+}
+
+}
+
+footer{
+    height: 8vh;
+    background-color: #d0976c;
+    margin-top: 40px;
+    text-align: center;
+    padding: 10px;
+}
+footer a{
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+
+
+        :root {
+            --gold: #D4AF37;
+            --deep-red: #8B0000;
+            --light-gold: #FFF5E1;
+            --accent-pink: #FF69B4;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #FFF5E1, #FFE4E1);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .card {
+            background: white;
+            max-width: 800px;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background-image: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95)),
+                            url('/api/placeholder/800/600');
+            background-size: cover;
+        }
+
+        .header {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, var(--deep-red), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            font-size: 2rem;
+            color: var(--deep-red);
+            margin-bottom: 2rem;
+        }
+
+        .date {
+            font-size: 1.8rem;
+            color: var(--accent-pink);
+            margin: 2rem 0;
+            font-weight: bold;
+        }
+
+        .message {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            margin: 2rem 0;
+            padding: 2rem;
+            color: #333;
+            position: relative;
+        }
+
+        .message::before,
+        .message::after {
+            content: '"';
+            font-size: 4rem;
+            color: var(--gold);
+            position: absolute;
+            opacity: 0.3;
+        }
+
+        .message::before {
+            top: -10px;
+            left: 0;
+        }
+
+        .message::after {
+            bottom: -40px;
+            right: 0;
+        }
+
+        .signature {
+            font-style: italic;
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            color: var(--deep-red);
+        }
+
+        .decoration {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.2;
+            color: var(--gold);
+        }
+
+        .corner-tl { top: 20px; left: 20px; }
+        .corner-tr { top: 20px; right: 20px; }
+        .corner-bl { bottom: 20px; left: 20px; }
+        .corner-br { bottom: 20px; right: 20px; }
+
+        @media (max-width: 768px) {
+            .card {
+                padding: 2rem;
+            }
+            
+            .title {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .message {
+                font-size: 1.2rem;
+                padding: 1rem;
+            }
+        }
+
+        .hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            top: 0;
+            left: 0;
+        }
+
+        @keyframes float-up {
+            0% {
+                transform: translateY(100%) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="card animate__animated animate__fadeIn">
+        <span class="decoration corner-tl">❦</span>
+        <span class="decoration corner-tr">❦</span>
+        <span class="decoration corner-bl">❦</span>
+        <span class="decoration corner-br">❦</span>
+
+        <header class="header">
+            <h1 class="title">Celebrating 20 Years of Love</h1>
+            <h2 class="subtitle">Balu & Kalaiselvi</h2>
+        </header>
+
+        <div class="date animate__animated animate__fadeIn animate__delay-1s">
+            ❤️ 14th February ❤️
+        </div>
+
+        <div class="message animate__animated animate__fadeIn animate__delay-2s">
+            Two hearts, one journey, twenty years of love—<br>
+            Each moment treasured, blessed by stars above.<br>
+            Your love grows stronger with each passing day,<br>
+            A beautiful story that lights up our way.<br><br>
+            Happy 20th Anniversary!
+        </div>
+
+        <div class="signature animate__animated animate__fadeIn animate__delay-3s">
+            With Love,<br>
+            [Your Name]
+        </div>
+    </div>
+    <div class="promo animate">
+        <h5>Get instant Web Invites with <a href="/">OurInvites</a> just one click! <a href="/" class="promoBtn" style="background-color:#dd757e; color: white; padding: 4px 6px; border-radius: 6px; font-size: 22px;">Get Now</a></h5>
+      </div>
+
+    <footer>
+
+        <a href="tel:+916380907421"> Crafted by OurInvites</a>
+      </footer>
+
+    <script>
+        function createFloatingHearts() {
+            const hearts = document.createElement('div');
+            hearts.className = 'hearts';
+            document.body.appendChild(hearts);
+
+            function addHeart() {
+                const heart = document.createElement('div');
+                heart.innerHTML = '❤️';
+                heart.style.position = 'absolute';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animation = `float-up ${3 + Math.random() * 3}s linear`;
+                heart.style.fontSize = `${20 + Math.random() * 20}px`;
+                heart.style.opacity = '0.6';
+                hearts.appendChild(heart);
+
+                heart.addEventListener('animationend', () => {
+                    heart.remove();
+                });
+            }
+
+            setInterval(addHeart, 500);
+        }
+
+        createFloatingHearts();
+    </script>
+</body>
+</html>
