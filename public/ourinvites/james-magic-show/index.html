@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta name="google-adsense-account" content="ca-pub-6479437529927703">
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VQ58SE806R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-VQ58SE806R');
+  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The James Magic Show</title>
+    <meta name="author" content="ourInvites">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="James Magic Show" />
+    <meta property="og:description"
+       content="With heartfelt joy, we invite you and your family to join us on James Magic Show" />
+<meta property="og:image" content="https://www.ourinvites.com/james-magic-show/magician.jpg" />
+<meta property="og:url" content="https://www.ourinvites.com/james-magic-show/" />
+<meta property="og:type" content="website" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #2a0845 0%, #000000 100%);
+            color: white;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .hero {
+            position: relative;
+            padding: 4rem 2rem;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .magician-img {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #ffd700, #ff8c00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #d4a0ff;
+            margin-bottom: 2rem;
+        }
+
+        .details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .detail-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .detail-card h3 {
+            color: #ffd700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: #000;
+            background: linear-gradient(45deg, #ffd700, #ff8c00);
+            border-radius: 50px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-top: 2rem;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .magician-img {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .details {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+
+
+
+
+</head>
+<body>
+    <div class="container">
+        <section class="hero">
+            <img src="./magician.png" alt="Magician" class="magician-img">
+            <h1>The Great Magic Show</h1>
+            <p class="subtitle">By James</p>
+            <button class="cta-button">Witness the Magic</button>
+        </section>
+
+        <section class="details">
+            <div class="detail-card">
+                <h3>📍 Location</h3>
+                <p>Chennai Metro Train</p>
+            </div>
+            <div class="detail-card">
+                <h3>📅 Date</h3>
+                <p>Feb 11 to 13 2025</p>
+            </div>
+            <div class="detail-card">
+                <h3>⏰ Time</h3>
+                <p>8P M - 11 PM</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
