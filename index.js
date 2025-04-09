@@ -488,9 +488,9 @@ console.log('Telegram Error:', err);
 app.get('/get/admin/feedbacks', async (req, res) => {
     try {
         let requests = await feedbackData.find();
-        // const filePath = path.join(__dirname, 'public', 'ourinvites', 'feedbacksDataBackup.json');
+        const filePath = path.join(__dirname, 'public', 'ourinvites', 'finalFeedbackData.json');
 
-        // fs.writeFileSync(filePath, JSON.stringify(requests, null, 4), 'utf8');
+        fs.writeFileSync(filePath, JSON.stringify(requests, null, 4), 'utf8');
         
         // Read the HTML template file
         fs.readFile(path.join(__dirname,'public','ourinvites', 'feedbackDashboard.html'), 'utf8', (err, htmlTemplate) => {
