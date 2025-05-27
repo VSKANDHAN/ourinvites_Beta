@@ -297,8 +297,8 @@
 
         .couple-image-wrapper {
             position: relative;
-            width: clamp(260px, 45vw, 320px);
-            height: clamp(260px, 45vw, 320px);
+            width: clamp(260px, 45vw, 300px);
+            height: clamp(260px, 45vw, 300px);
             border-radius: 50%;
             overflow: hidden;
             box-shadow: 0 8px 25px rgba(103, 78, 167, 0.3);
@@ -306,21 +306,22 @@
         }
 
         .couple-image {
-            width: 100%;
-            height: 100%;
+            width: 90%;
+            height: 90%;
             object-fit: cover;
             object-position: center;
             display: block;
             transition: transform 0.3s ease;
         }
-               .couple-image1 {
+
+            .couple-image1 {
             width: 80%;
             height:auto;
             transition: transform 0.3s ease;
             border-radius: 24px;
         }
 
-        .couple-image:hover {
+        .couple-image1:hover {
             transform: scale(1.05);
         }
 
@@ -398,6 +399,9 @@
             margin: 30px 20px;
             font-size: 12px;
             letter-spacing: 0pt;
+        }
+        .actions a{
+            text-decoration: none;
         }
 
         .venue {
@@ -687,9 +691,9 @@
         </div>
 
 
-             <!-- Couple Image Section -->
+        <!-- Couple Image Section -->
         <div class="intro-img-container">
-            <div class="couple-image-wrapper"> 
+            <div class="couple-image-wrapper1"> 
                 <img class="couple-image1" src="./assets/heroImage.png" alt="Couple Image">
             </div>
         </div>
