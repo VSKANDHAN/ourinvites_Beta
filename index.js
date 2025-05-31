@@ -34,6 +34,10 @@ app.get('/',(req,res)=>{
     res.sendFile(path.join(__dirname, 'public','ourinvites', 'index.html'));
     
 })
+app.get('/refund-policy',(req,res)=>{
+    res.sendFile(path.join(__dirname, 'public','ourinvites', 'refund-policy.html'));
+    
+})
 app.get('/kpm-bookfair2025',(req,res)=>{
     res.sendFile(path.join(__dirname, 'public','ourinvites', 'feedback.html'));
     
